@@ -12,7 +12,14 @@ redirect_from:
 Education
 ======
 * M.S. in Data Science, Chinese University of Hong Kong, 2025
-* B.S. in , University of Science and Technology of China, 2021
+* B.S. in Mathematics and Applied Mathematics, University of Science and Technology of China, 2021
+* 
+Research experience
+======
+* July 2023 - Dec 2023: Undergraduate Research Project
+  * School of Mathematical Sciences, USTC
+  * Duties includes: Parallelized one algorithm for computing geodesics on a mesh
+  * Supervisor: Prof. Renjie Chen
 
 Work experience
 ======
@@ -21,16 +28,6 @@ Work experience
   * Duties includes: Updates and improvements to template
   * Supervisor: The Users
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
 Skills
 ======
 * Skill 1
