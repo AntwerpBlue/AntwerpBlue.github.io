@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog")).filter((p) => !p.data.draft);
+  const tagSet = new Set<string>();
+  for (const p of posts) for (const t of p.data.tags ?? []) tagSet.add(t);
+  return [...tagSet].map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+const posts = (await getCollection("blog"))
+  .filter((p) => !p.data.draft)
+  .filter((p) => (p.data.tags ?? []).includes(tag))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<BaseLayout title={`标签：${tag} - AntwerpBlue`} description={`带有 ${tag} 标签的文章`}>
+  <section style="display:flex; justify-content: space-between; gap: 12px; align-items: baseline;">
+    <h1 style="margin: 0">标签：{tag}</h1>
+    <a class="muted" href="/tags/">全部标签 →</a>
+  </section>
+
+  <div style="height: 12px"></div>
+
+  <div class="post-list">
+    {posts.map((post) => (
+      <a class="card" href={`/blog/${post.slug}/`}>
+        <div style="display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <strong>{post.data.title}</strong>
+          <span class="muted">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+        </div>
+        {post.data.description ? (
+          <p class="muted" style="margin: 8px 0 0 0">{post.data.description}</p>
+        ) : null}
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+

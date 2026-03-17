@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Blog",
+  description = "A personal blog built with Astro.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="/">AntwerpBlue</a>
+      <nav class="links">
+        <a href="/">首页</a>
+        <a href="/blog/">文章</a>
+        <a href="/about/">关于</a>
+        <a href="/rss.xml">RSS</a>
+      </nav>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+  </body>
+</html>
+

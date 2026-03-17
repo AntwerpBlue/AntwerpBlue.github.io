@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 5);
+---
+
+<BaseLayout title="AntwerpBlue" description="个人博客">
+  <section class="card">
+    <h1 style="margin: 0 0 8px 0">你好，我是 AntwerpBlue</h1>
+    <p class="muted" style="margin: 0">
+      这里是用 Astro 搭建的个人博客。你可以在这里写文章、做项目展示、加搜索/评论/组件等。
+    </p>
+  </section>
+
+  <div style="height: 16px"></div>
+
+  <section>
+    <div style="display:flex; justify-content: space-between; gap: 12px; align-items: baseline;">
+      <h2 style="margin: 0">最新文章</h2>
+      <a class="muted" href="/blog/">查看全部 →</a>
+    </div>
+    <div style="height: 10px"></div>
+    <div class="post-list">
+      {posts.map((post) => (
+        <a class="card" href={`/blog/${post.slug}/`}>
+          <div style="display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+            <strong>{post.data.title}</strong>
+            <span class="muted">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+          </div>
+          {post.data.description ? (
+            <p class="muted" style="margin: 8px 0 0 0">{post.data.description}</p>
+          ) : null}
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+

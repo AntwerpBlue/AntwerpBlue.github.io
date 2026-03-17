@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).filter((p) => !p.data.draft);
+const tagCounts = new Map<string, number>();
+for (const p of posts) {
+  for (const t of p.data.tags ?? []) {
+    tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+  }
+}
+const tags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
+---
+
+<BaseLayout title="标签 - AntwerpBlue" description="文章标签">
+  <section style="display:flex; justify-content: space-between; gap: 12px; align-items: baseline;">
+    <h1 style="margin: 0">标签</h1>
+    <span class="muted">{tags.length} 个</span>
+  </section>
+
+  <div style="height: 12px"></div>
+
+  <div class="card">
+    <div class="tags" style="margin-top: 0">
+      {tags.map(([tag, count]) => (
+        <a class="tag" href={`/tags/${encodeURIComponent(tag)}/`}>
+          {tag} ({count})
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+

@@ -1,0 +1,36 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { title, description, pubDate, updatedDate, tags = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="prose">
+    <header class="card">
+      <h1 style="margin: 0 0 8px 0">{title}</h1>
+      <div class="post-meta">
+        <time datetime={pubDate.toISOString()}>
+          发布于 {pubDate.toISOString().slice(0, 10)}
+        </time>
+        {updatedDate ? (
+          <time datetime={updatedDate.toISOString()}>
+            更新于 {updatedDate.toISOString().slice(0, 10)}
+          </time>
+        ) : null}
+      </div>
+      {tags?.length ? (
+        <div class="tags">
+          {tags.map((t) => (
+            <a class="tag" href={`/tags/${encodeURIComponent(t)}/`}>{t}</a>
+          ))}
+        </div>
+      ) : null}
+    </header>
+
+    <div style="height: 16px"></div>
+    <div class="card">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+

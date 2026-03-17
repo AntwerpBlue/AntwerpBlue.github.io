@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<BaseLayout title="文章 - AntwerpBlue" description="博客文章列表">
+  <section style="display:flex; justify-content: space-between; gap: 12px; align-items: baseline;">
+    <h1 style="margin: 0">文章</h1>
+    <span class="muted">{posts.length} 篇</span>
+  </section>
+
+  <div style="height: 12px"></div>
+
+  <div class="post-list">
+    {posts.map((post) => (
+      <a class="card" href={`/blog/${post.slug}/`}>
+        <div style="display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <strong>{post.data.title}</strong>
+          <span class="muted">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+        </div>
+        {post.data.description ? (
+          <p class="muted" style="margin: 8px 0 0 0">{post.data.description}</p>
+        ) : null}
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+
