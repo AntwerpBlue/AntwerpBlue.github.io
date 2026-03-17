@@ -10,3 +10,7 @@ Gemfile.lock
 
 # Ingore files created by npm
 node_modules
+
+# Astro (blog in /astro)
+astro/dist/
+astro/.astro/

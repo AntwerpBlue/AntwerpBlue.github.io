@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "@pagefind/default-ui/css/ui.css";
+---
+
+<BaseLayout title="搜索 - AntwerpBlue" description="站内搜索">
+  <section class="card">
+    <h1 style="margin-top: 0">搜索</h1>
+    <p class="muted" style="margin-top: 0">
+      输入关键词搜索全站内容（构建时生成索引，纯静态）。
+    </p>
+    <div id="search"></div>
+  </section>
+
+  <script type="module">
+    import { PagefindUI } from "@pagefind/default-ui";
+
+    new PagefindUI({
+      element: "#search",
+      showImages: false,
+      resetStyles: false,
+    });
+  </script>
+</BaseLayout>
+
