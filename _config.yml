@@ -12,7 +12,7 @@ baidu_site_verification  :
 author:
   name             : "Zhaochen Wang"
   name_zh          :
-  avatar           : "/images/profile.png"
+  avatar           : "profile.png"
   bio              : "Quantitative Research · Market Microstructure · Machine Learning"
   location         :
   employer         :
