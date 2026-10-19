@@ -27,28 +27,73 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
-.paper-box {
+.project-card {
+  margin-bottom: 18px;
+  padding: 14px;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(#000, 0.07);
+  }
+}
+
+.project-card__title {
+  color: #1f2d3d;
+  font-size: 1.06em;
+  font-weight: 600;
+}
+
+.project-card__description {
+  margin: 6px 0 0;
+  color: #444;
+  font-size: 0.92em;
+}
+
+.experience-card {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background: #fdfdfd;
+}
+
+.experience-card__header {
   display: flex;
-  justify-content: left;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  border-bottom: 1px #efefef solid;
-  padding: 2em 0;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+}
 
-  .paper-box-image {
-    justify-content: center;
-    display: flex;
-    width: 100%;
-    order: 2;
-    img { max-width: 400px; box-shadow: 3px 3px 6px #888; object-fit: cover; }
-  }
-  .paper-box-text { max-width: 100%; order: 1; }
+.experience-card__role {
+  margin: 0;
+  color: #24292e;
+  font-size: 1.05em;
+  font-weight: 600;
+}
 
-  @include breakpoint($medium) {
-    .paper-box-image { justify-content: left; min-width: 200px; max-width: 40%; order: 1; }
-    .paper-box-text { justify-content: left; padding-left: 2em; max-width: 60%; order: 2; }
-  }
+.experience-card__time {
+  color: #586069;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.experience-card__organization {
+  margin-bottom: 6px;
+  color: #0366d6;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.experience-card__description {
+  margin: 0;
+  color: #444;
+  font-size: 0.9em;
+  line-height: 1.5;
 }
 
 $scroll_offset: 2em;
@@ -61,6 +106,10 @@ h1:before, .anchor:before {
   margin-top: -$scroll_offset;
 }
 
+.anchor {
+  scroll-margin-top: $masthead-height + 10px;
+}
+
 .badge {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -71,3 +120,4 @@ h1:before, .anchor:before {
   background-color: #00369f;
   font-size: .8em;
 }
+

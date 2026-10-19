@@ -1,25 +1,21 @@
 {
-  "name": "academic-pages",
-  "version": "0.8.1.1",
-  "description": "Academic Pages Mistakes Jekyll theme npm build scripts",
+  "name": "antwerpblue.github.io",
+  "version": "1.0.0",
+  "description": "Build tooling for Zhaochen Wang's Jekyll research portfolio",
   "repository": {
     "type": "git",
-    "url": "https://github.com/academicpages/academicpages.github.io"
+    "url": "https://github.com/AntwerpBlue/AntwerpBlue.github.io"
   },
   "keywords": [
     "jekyll",
     "theme",
     "minimal"
   ],
-  "contributors": [
-    "Michael Rose",
-    "Robert Zupko"
-  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/academicpages/academicpages.github.io/issues"
+    "url": "https://github.com/AntwerpBlue/AntwerpBlue.github.io/issues"
   },
-  "homepage": "https://github.com/academicpages/academicpages.github.io",
+  "homepage": "https://antwerpblue.github.io",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -39,3 +35,4 @@
     "build:js": "npm run uglify"
   }
 }
+

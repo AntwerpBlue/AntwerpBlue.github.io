@@ -1,90 +1,37 @@
 title                    : "Zhaochen Wang"
+title_separator          : "·"
 description              : "Quantitative research, market microstructure, and machine learning."
+locale                   : "en"
 repository               : "AntwerpBlue/AntwerpBlue.github.io"
 url                      : "https://antwerpblue.github.io"
 baseurl                  : ""
 
-google_analytics_id      :
-google_site_verification :
-bing_site_verification   :
-baidu_site_verification  :
-
 author:
   name             : "Zhaochen Wang"
-  name_zh          :
-  avatar           : "images/avatar-placeholder.svg"
+  avatar           : "avatar-placeholder.svg"
   bio              : "Quantitative Research · Market Microstructure · Machine Learning"
-  location         :
-  employer         :
-  pubmed           :
-  googlescholar    :
-  cv               :
   email            : "orenwang@mail.ustc.edu.cn"
-  researchgate     :
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
   github           : "AntwerpBlue"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      :
-  lastfm           :
-  linkedin         :
-  dblp             :
-  orcid            :
-  pinterest        :
-  soundcloud       :
-  stackoverflow    :
-  steam            :
-  tumblr           :
-  twitter          :
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
 
 include:
-  - .htaccess
   - _pages
-  - files
+
 exclude:
-  - docs
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
   - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
   - .github
-  - CHANGELOG
-  - Capfile
+  - .jekyll-cache
+  - .sass-cache
+  - .gitignore
   - Gemfile
   - Gemfile.lock
-  - .gitignore
-  - Gruntfile.js
   - LICENSE
-  - README
-  - Rakefile
+  - README.md
   - assets/js/_main.js
   - assets/js/plugins
-  - assets/js/vendor
-  - config
-  - gulpfile.js
-  - log
   - node_modules
   - package.json
-  - tmp
   - vendor
-  - run_server.sh
-keep_files:
-  - .git
-  - .svn
+
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
@@ -117,22 +64,14 @@ sass:
   style: compressed
 
 permalink: /:categories/:title/
-timezone: Etc/UTC
+timezone: Asia/Shanghai
 
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-redirect-from
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
 
 compress_html:
   clippings: all
   ignore:
     envs: development
+

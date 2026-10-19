@@ -1,16 +1,10 @@
-# Ignore the contents of the _site directory and other cache directories
 _site/
+.jekyll-cache/
 .sass-cache/
+.bundle/
+vendor/
 
-# Ignore the directory for local files during development
 local/
-
-# Ignore the Gemfile that is generated
 Gemfile.lock
+node_modules/
 
-# Ingore files created by npm
-node_modules
-
-# Astro (blog in /astro)
-astro/dist/
-astro/.astro/
