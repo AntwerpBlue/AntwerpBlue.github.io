@@ -16,21 +16,15 @@ I am **Zhaochen Wang**, interested in **quantitative research, market microstruc
 
 Education details will be added here.
 
-# 💼 Experience
+<h1 class="home-section-title"><a href="{{ '/experience/' | relative_url }}">💼 Experience <span aria-hidden="true">→</span></a></h1>
 
 Research and engineering work focused on high-frequency data, market microstructure, predictive modeling, and research infrastructure.
 
-[View experience →]({{ '/experience/' | relative_url }})
-
-# 🧪 Selected Projects
+<h1 class="home-section-title"><a href="{{ '/projects/' | relative_url }}">🧪 Selected Projects <span aria-hidden="true">→</span></a></h1>
 
 Selected work across factor research, portfolio backtesting, market microstructure infrastructure, and machine learning for alpha research.
 
-[View projects →]({{ '/projects/' | relative_url }})
-
-# 📝 Research Notes
+<h1 class="home-section-title"><a href="{{ '/notes/' | relative_url }}">📝 Research Notes <span aria-hidden="true">→</span></a></h1>
 
 Longer research notes and technical write-ups live in a separate, chronological archive.
-
-[Browse all research notes →]({{ '/notes/' | relative_url }})
 
