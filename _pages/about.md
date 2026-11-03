@@ -48,7 +48,9 @@ I am **Zhaochen Wang**, interested in **quantitative research, market microstruc
 <span class="anchor" id="notes"></span>
 # 📝 Research Notes
 
-Research notes and technical write-ups will be added here.
+Longer research notes and technical write-ups live in a separate, chronological archive.
+
+[Browse all research notes →]({{ '/notes/' | relative_url }})
 
 <span class="anchor" id="education"></span>
 # 🎓 Education

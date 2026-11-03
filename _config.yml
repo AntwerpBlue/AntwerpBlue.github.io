@@ -1,6 +1,6 @@
 title                    : "Zhaochen Wang"
 title_separator          : "·"
-description              : "Quantitative research, market microstructure, and machine learning."
+description              : "Quantitative Research"
 locale                   : "en"
 repository               : "AntwerpBlue/AntwerpBlue.github.io"
 url                      : "https://antwerpblue.github.io"
@@ -9,7 +9,7 @@ baseurl                  : ""
 author:
   name             : "Zhaochen Wang"
   avatar           : "avatar-placeholder.svg"
-  bio              : "Quantitative Research · Market Microstructure · Machine Learning"
+  bio              : "Quantitative Research"
   email            : "orenwang@mail.ustc.edu.cn"
   github           : "AntwerpBlue"
 
@@ -41,6 +41,11 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
+collections:
+  notes:
+    output: true
+    permalink: /notes/:path/
+
 kramdown:
   input: GFM
   hard_wrap: false
@@ -58,6 +63,14 @@ defaults:
     values:
       layout: default
       author_profile: true
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: false
 
 sass:
   sass_dir: _sass
