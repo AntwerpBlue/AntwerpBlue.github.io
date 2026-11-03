@@ -42,6 +42,12 @@ excerpt_separator: "\n\n"
 incremental: false
 
 collections:
+  experiences:
+    output: true
+    permalink: /experience/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
   notes:
     output: true
     permalink: /notes/:path/
@@ -71,6 +77,22 @@ defaults:
       author_profile: true
       read_time: true
       share: false
+  - scope:
+      path: ""
+      type: experiences
+    values:
+      layout: detail
+      author_profile: true
+      back_url: /experience/
+      back_label: All experience
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: detail
+      author_profile: true
+      back_url: /projects/
+      back_label: All projects
 
 sass:
   sass_dir: _sass

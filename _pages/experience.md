@@ -7,15 +7,20 @@ author_profile: true
 
 <h1 class="page__title">Experience</h1>
 
-<p class="page-lead">Research and engineering experience across quantitative modeling, high-frequency data, and production research systems.</p>
+<p class="page-lead">Research and engineering experience across quantitative modeling, high-frequency data, and production research systems. Select an entry to open its details.</p>
 
-<div class="experience-card">
-  <div>
-    <div class="experience-card__header">
-      <h2 class="experience-card__role">Quantitative Research</h2>
-      <span class="experience-card__time">Recent</span>
-    </div>
-    <div class="experience-card__organization">Research & Engineering</div>
-    <p class="experience-card__description">High-frequency factor research, market microstructure, predictive modeling, and research infrastructure.</p>
-  </div>
+{% assign experience_items = site.experiences | sort: "order" %}
+<div class="content-card-list">
+  {% for item in experience_items %}
+    <a class="content-card" href="{{ item.url | relative_url }}">
+      <span class="content-card__header">
+        <span class="content-card__title">{{ item.title }}</span>
+        <span class="content-card__arrow" aria-hidden="true">→</span>
+      </span>
+      {% if item.organization or item.period %}
+        <span class="content-card__meta">{{ item.organization }}{% if item.organization and item.period %} · {% endif %}{{ item.period }}</span>
+      {% endif %}
+      <span class="content-card__description">{{ item.summary }}</span>
+    </a>
+  {% endfor %}
 </div>

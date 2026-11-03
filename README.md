@@ -4,7 +4,7 @@ Personal quantitative-research homepage built with Jekyll and adapted from the M
 
 The site is deployed to GitHub Pages from the `master` branch via GitHub Actions.
 
-Homepage content lives in `_pages/about.md`; dedicated sections live in `_pages/experience.md`, `_pages/projects.md`, and `_pages/notes.md`. Site identity and profile links live in `_config.yml`.
+Homepage content lives in `_pages/about.md`; experience details live in `_experiences/`, project details live in `_projects/`, and research notes live in `_notes/`. Their index pages live in `_pages/`. Site identity and profile links live in `_config.yml`.
 
 ## Publishing research notes
 

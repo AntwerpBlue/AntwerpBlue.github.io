@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<p class="detail-back-link"><a href="{{ page.back_url | relative_url }}">← {{ page.back_label }}</a></p>
+
+<header class="detail-header">
+  <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
+  {% if page.organization or page.period %}
+    <p class="detail-header__meta">{{ page.organization }}{% if page.organization and page.period %} · {% endif %}{{ page.period }}</p>
+  {% endif %}
+  {% if page.summary %}<p class="page-lead">{{ page.summary }}</p>{% endif %}
+</header>
+
+{{ content }}

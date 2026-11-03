@@ -7,19 +7,17 @@ author_profile: true
 
 <h1 class="page__title">Projects</h1>
 
-<p class="page-lead">Selected research and engineering work. Individual project details can be expanded here over time.</p>
+<p class="page-lead">Selected research and engineering work. Select a project to open its dedicated detail page.</p>
 
-<div class="project-card" id="factor-research-portfolio-backtesting">
-  <div class="project-card__title">Factor Research & Portfolio Backtesting</div>
-  <p class="project-card__description">Point-in-time factor diagnostics, portfolio construction, risk attribution, and transaction-cost-aware backtesting.</p>
-</div>
-
-<div class="project-card" id="market-microstructure-research-infrastructure">
-  <div class="project-card__title">Market Microstructure Research Infrastructure</div>
-  <p class="project-card__description">High-frequency feature computation, multi-source data contracts, DAG execution, incremental materialization, and cross-frequency research workflows.</p>
-</div>
-
-<div class="project-card" id="machine-learning-alpha-research">
-  <div class="project-card__title">Machine Learning for Alpha Research</div>
-  <p class="project-card__description">Controlled model comparisons and ablations across gradient boosting, neural models, sequence encoders, and short-horizon return prediction.</p>
+{% assign project_items = site.projects | sort: "order" %}
+<div class="content-card-list">
+  {% for item in project_items %}
+    <a class="content-card" href="{{ item.url | relative_url }}">
+      <span class="content-card__header">
+        <span class="content-card__title">{{ item.title }}</span>
+        <span class="content-card__arrow" aria-hidden="true">→</span>
+      </span>
+      <span class="content-card__description">{{ item.summary }}</span>
+    </a>
+  {% endfor %}
 </div>

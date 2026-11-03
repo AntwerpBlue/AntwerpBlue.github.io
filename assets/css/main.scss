@@ -27,83 +27,88 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
-.project-card {
-  margin-bottom: 18px;
-  padding: 14px;
-  border: 1px solid #ececec;
-  border-radius: 8px;
+.content-card-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+.content-card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
   background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: rgba($link-color, 0.55);
+    box-shadow: 0 8px 22px rgba(#000, 0.07);
+    color: inherit;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba($link-color, 0.25);
+    outline-offset: 2px;
+  }
+
+  &:hover .content-card__arrow,
+  &:focus-visible .content-card__arrow {
+    transform: translateX(3px);
+  }
 }
 
-.project-card.content-card-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(#000, 0.07);
-}
-
-.project-card[id] {
-  scroll-margin-top: $masthead-height + 16px;
-}
-
-.project-card__title {
-  color: #1f2d3d;
-  font-size: 1.06em;
-  font-weight: 600;
-}
-
-.project-card__description {
-  margin: 6px 0 0;
-  color: #444;
-  font-size: 0.92em;
-}
-
-.experience-card {
-  margin-bottom: 16px;
-  padding: 16px;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  background: #fdfdfd;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.experience-card.content-card-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(#000, 0.07);
-}
-
-.experience-card__header {
+.content-card__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 4px;
+  gap: 1rem;
 }
 
-.experience-card__role {
-  margin: 0;
-  color: #24292e;
-  font-size: 1.05em;
+.content-card__title {
+  color: #1f2d3d;
+  font-size: 1.02em;
   font-weight: 600;
+  line-height: 1.35;
 }
 
-.experience-card__time {
-  color: #586069;
-  font-size: 0.9em;
-  white-space: nowrap;
+.content-card__arrow {
+  flex: 0 0 auto;
+  color: $link-color;
+  font-weight: 600;
+  transition: transform 0.2s ease;
 }
 
-.experience-card__organization {
-  margin-bottom: 6px;
-  color: #0366d6;
-  font-size: 0.95em;
-  font-weight: 500;
+.content-card__meta {
+  display: block;
+  margin-top: 0.35rem;
+  color: #6a737d;
+  font-size: 0.82em;
 }
 
-.experience-card__description {
-  margin: 0;
+.content-card__description {
+  display: block;
+  margin-top: 0.55rem;
   color: #444;
-  font-size: 0.9em;
-  line-height: 1.5;
+  font-size: 0.91em;
+  line-height: 1.55;
+}
+
+.content-empty {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px dashed #d1d5da;
+  border-radius: 10px;
+  background: #fafbfc;
+  color: #586069;
 }
 
 .page-lead {
@@ -114,19 +119,15 @@
   line-height: 1.65;
 }
 
-.content-card-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
+.detail-back-link {
+  margin: 0 0 1.5rem;
+  font-size: 0.88em;
+}
 
-  &:visited {
-    color: inherit;
-  }
-
-  &:focus-visible {
-    outline: 3px solid rgba($link-color, 0.35);
-    outline-offset: 2px;
-  }
+.detail-header__meta {
+  margin: -0.4rem 0 0.75rem;
+  color: #6a737d;
+  font-size: 0.9em;
 }
 
 .notes-intro {
