@@ -34,11 +34,15 @@
   border-radius: 8px;
   background: #fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(#000, 0.07);
-  }
+.project-card.content-card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(#000, 0.07);
+}
+
+.project-card[id] {
+  scroll-margin-top: $masthead-height + 16px;
 }
 
 .project-card__title {
@@ -59,6 +63,12 @@
   border: 1px solid #eaeaea;
   border-radius: 8px;
   background: #fdfdfd;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card.content-card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(#000, 0.07);
 }
 
 .experience-card__header {
@@ -104,25 +114,18 @@
   line-height: 1.65;
 }
 
-.home-section-title {
-  a {
+.content-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+
+  &:visited {
     color: inherit;
-    text-decoration: none;
+  }
 
-    span {
-      display: inline-block;
-      color: $link-color;
-      font-size: 0.78em;
-      transition: transform 0.2s ease;
-    }
-
-    &:hover {
-      color: $link-color-hover;
-
-      span {
-        transform: translateX(3px);
-      }
-    }
+  &:focus-visible {
+    outline: 3px solid rgba($link-color, 0.35);
+    outline-offset: 2px;
   }
 }
 
