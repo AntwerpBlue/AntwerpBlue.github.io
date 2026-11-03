@@ -1,9 +1,11 @@
 ---
-layout: archive
+layout: default
 title: "Research Notes"
 permalink: /notes/
 author_profile: true
 ---
+
+<h1 class="page__title">Research Notes</h1>
 
 <p class="notes-intro">Research notes, implementation details, and technical write-ups. New notes are published here in reverse chronological order.</p>
 
