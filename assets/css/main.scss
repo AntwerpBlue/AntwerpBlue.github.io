@@ -96,6 +96,14 @@
   line-height: 1.5;
 }
 
+.page-lead {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+  color: #586069;
+  font-size: 1.02em;
+  line-height: 1.65;
+}
+
 .notes-intro {
   max-width: 42rem;
   margin-bottom: 2rem;
@@ -160,17 +168,13 @@
 }
 
 $scroll_offset: 2em;
-h1:before, .anchor:before {
+h1:before {
   content: '';
   display: block;
   position: relative;
   width: 0;
   height: $scroll_offset;
   margin-top: -$scroll_offset;
-}
-
-.anchor {
-  scroll-margin-top: $masthead-height + 10px;
 }
 
 .badge {
