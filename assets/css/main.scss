@@ -66,6 +66,11 @@
   }
 }
 
+.page__content a.content-card,
+.page__content a.content-card:hover {
+  text-decoration: none;
+}
+
 .content-card__header {
   display: flex;
   align-items: flex-start;
