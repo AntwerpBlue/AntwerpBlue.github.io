@@ -16,9 +16,10 @@ author_profile: true
       <li class="notes-list__item">
         <article>
           <h2 class="notes-list__title"><a href="{{ note.url | relative_url }}">{{ note.title }}</a></h2>
-          {% if note.date or note.tags %}
+          {% if note.date or note.tags or note.status %}
             <p class="notes-list__meta">
               {% if note.date %}<time datetime="{{ note.date | date_to_xmlschema }}">{{ note.date | date: "%Y-%m-%d" }}</time>{% endif %}
+              {% if note.status == "template" %}<span class="notes-list__status">Template placeholder</span>{% endif %}
               {% if note.tags and note.tags.size > 0 %}<span class="notes-list__tags">{{ note.tags | join: " · " }}</span>{% endif %}
             </p>
           {% endif %}

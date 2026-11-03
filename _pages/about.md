@@ -60,7 +60,13 @@ Education details will be added here.
           <span class="content-card__title">{{ note.title }}</span>
           <span class="content-card__arrow" aria-hidden="true">→</span>
         </span>
-        {% if note.date %}<span class="content-card__meta">{{ note.date | date: "%Y-%m-%d" }}</span>{% endif %}
+        {% if note.date or note.status %}
+          <span class="content-card__meta">
+            {% if note.date %}{{ note.date | date: "%Y-%m-%d" }}{% endif %}
+            {% if note.date and note.status == "template" %} · {% endif %}
+            {% if note.status == "template" %}Template placeholder{% endif %}
+          </span>
+        {% endif %}
         <span class="content-card__description">{{ note.excerpt | markdownify | strip_html | strip_newlines }}</span>
       </a>
     {% endfor %}

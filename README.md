@@ -18,10 +18,13 @@ excerpt: "A short description shown on the notes page."
 tags:
   - market microstructure
   - machine learning
+status: template
 ---
 
 Write the note here in Markdown.
 ```
 
 Committed notes are published at `/notes/<filename>/` and appear automatically on `/notes/`, newest first.
+
+Use `status: template` for an unfinished outline that should be visibly labeled as a template. Remove that field when the note is ready to publish as a completed article.
 
